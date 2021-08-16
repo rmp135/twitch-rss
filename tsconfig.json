@@ -1,0 +1,13 @@
+{
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "sourceMap": false,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "lib": [
+      "es2017"
+    ]
+  }
+}
