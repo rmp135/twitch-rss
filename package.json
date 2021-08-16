@@ -1,8 +1,9 @@
 {
-  "name": "twitch",
+  "name": "twitch-rss",
   "version": "1.0.0",
-  "main": "dist/cli.js",
+  "bin": "./bin/twitch-rss",
   "license": "MIT",
+  "repository": "rmp135/twitch-rss",
   "dependencies": {
     "feed": "^4.2.2",
     "lodash": "^4.17.21",
