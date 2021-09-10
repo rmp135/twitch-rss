@@ -3,11 +3,7 @@ import { Config } from './Typings'
 import { promises as fs } from 'fs'
 import path from 'path'
 
-export async function GetConfig(args: string[]): Promise<Config> {
-  let filepath = "config.json"
-  if (args.length === 3) {
-    filepath = args[2]
-  }
+export async function GetConfig(filepath: string): Promise<Config> {
   let config: Config = JSON.parse(await fs.readFile(path.join(process.cwd(), filepath), { encoding: 'utf-8' }))
   config = SetBaseConfig(config)
   CheckConfig(config)
