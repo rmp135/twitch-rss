@@ -1,5 +1,8 @@
 # twitch-rss
 
+[![npm (scoped)](https://img.shields.io/npm/v/@rmp135/twitch-rss)](https://www.npmjs.com/package/@rmp135/twitch-rss)
+[![Build Status](https://app.travis-ci.com/rmp135/imgur.svg?branch=master)](https://app.travis-ci.com/rmp135/imgur)
+
 For the dozen people still using RSS feeds, this node app will generate an RSS compliant XML feed for archived videos of streamers you follow on Twitch. 
 
 Only the previous 2 days of archived videos will be returned per streamer. Only the first 100 followers will be fetched.
