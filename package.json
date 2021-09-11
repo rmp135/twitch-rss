@@ -1,5 +1,5 @@
 {
-  "name": "twitch-rss",
+  "name": "@rmp135/twitch-rss",
   "version": "1.0.0",
   "bin": "./bin/twitch-rss",
   "license": "MIT",
