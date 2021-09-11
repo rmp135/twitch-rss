@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { URLSearchParams  } from 'url'
+import { URLSearchParams } from 'url'
 import { LoginResponse } from './NetworkModels'
 
 /**
@@ -10,19 +10,22 @@ import { LoginResponse } from './NetworkModels'
  * @param accessToken The Twitch API Access Token from a login response.
  * @returns The server response as type T.
  */
-export async function Get<T>(path: string, params: { [key: string]: string }, clientId: string, accessToken: string) : Promise<T> {
+export async function Get<T> (
+  path: string,
+  params: { [key: string]: string },
+  clientId: string,
+  accessToken: string
+): Promise<T> {
   const searchParams = new URLSearchParams(params ?? {})
 
   const url = `https://api.twitch.tv/helix/${path}?${searchParams.toString()}`
-  const response = await fetch(url,
-    {
-      headers: {
-        'Content-Type' : 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
-        'client-id': clientId
-      }
+  const response = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+      'client-id': clientId
     }
-  )
+  })
   const jsonResponse = await response.json()
   return jsonResponse
 }
@@ -33,13 +36,14 @@ export async function Get<T>(path: string, params: { [key: string]: string }, cl
  * @param clientSecret The Twitch API Client Secret.
  * @returns Login response.
  */
-export async function Login(clientId: string, clientSecret: string): Promise<LoginResponse> {
+export async function Login (
+  clientId: string,
+  clientSecret: string
+): Promise<LoginResponse> {
   const url = `https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`
-  const response = await fetch(url,
-    {
-      method: 'POST'
-    }
-  )
+  const response = await fetch(url, {
+    method: 'POST'
+  })
   const jsonResponse = await response.json()
   return jsonResponse
 }

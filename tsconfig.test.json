@@ -1,0 +1,15 @@
+{
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "__test",
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES2020",
+    "lib": [
+      "es2017"
+    ]
+  }
+}
